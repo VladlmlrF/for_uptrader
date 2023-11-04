@@ -159,4 +159,4 @@ cython_debug/
 .idea/
 /.env
 /for_uptrader/.env
-/for_uptrader/products/
+/for_uptrader/media/

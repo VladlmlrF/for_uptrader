@@ -1,0 +1,19 @@
+{% extends "menu/base.html" %}
+{% load static %}
+{% load menu_tags %}
+
+{% block content %}
+<div id="sidebar">
+    <h3>Menu</h3>
+    <ul>
+      <li {% if not cat_selected %}class="selected"{% endif %}>
+        <a href="{% url 'menu:product_list' %}">All</a>
+      </li>
+      {% draw_menu cat_selected %}
+    </ul>
+</div>
+
+<div id="main">
+
+</div>
+{% endblock %}

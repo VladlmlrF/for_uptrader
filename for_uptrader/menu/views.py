@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Product
 
-# Create your views here.
+
+def product_list(request, category_slug=None):
+    return render(request, 'menu/product/list.html', {'cat_selected': category_slug})
+
+
+def product_detail(request, id, slug):
+    product = get_object_or_404(Product, id=id, slug=slug)
+    return render(request, 'menu/product/detail.html', {'product': product})

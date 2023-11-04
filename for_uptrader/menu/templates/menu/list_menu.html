@@ -1,0 +1,15 @@
+{% load menu_tags %}
+{% for c in categories %}
+    {% if c.slug == cat_selected %}
+        <li class="selected">
+            <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+            <ul id="product">
+                {% draw_products cat_selected %}
+            </ul>
+        </li>
+    {% else %}
+        <li>
+            <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+        </li>
+    {% endif %}
+{% endfor %}
